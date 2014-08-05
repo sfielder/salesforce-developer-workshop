@@ -70,37 +70,36 @@ In this module, you create a custom controller with a method that returns a list
 
 1. Implement HotelMap as follows:
 
-  ```
-  <apex:page sidebar="false" showheader="false">
+    ```
+    <apex:page sidebar="false" showheader="false">
 
-  <head>
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script>
-    var map;
+    <head>
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map { height: 100% }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script>
+            var map;
 
-    function initialize() {
-        var mapOptions = {
-            center: new google.maps.LatLng(37.784173, -122.401557),
-            zoom: 15
-        };
-        map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    }
+            function initialize() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(37.784173, -122.401557),
+                    zoom: 15
+                };
+                map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    <body>
+        <div id="map"/>
+    </body>
 
-  </script>
-  </head>
-  <body>
-      <div id="map-canvas"/>
-  </body>
-
-  </apex:page>
-  ```
+    </apex:page>
+    ```
 
 1. Save the file
 
@@ -110,11 +109,11 @@ In this module, you create a custom controller with a method that returns a list
 
 1. Assign **HotelRemoter** as the controller for the **HotelMap** Visualforce page:
 
-  ```
-  <apex:page sidebar="false" showheader="false" controller="HotelRemoter">
-  ```
+    ```
+    <apex:page sidebar="false" showheader="false" controller="HotelRemoter">
+    ```
 
-1. Define a function named loadHotels() implemented as follows (right after the initilize() function):
+1. Define a function named **loadHotels()** implemented as follows (right after the **initilize()** function):
 
     ```
     function loadHotels() {
@@ -137,26 +136,26 @@ In this module, you create a custom controller with a method that returns a list
     }
     ```
 
-1. Define the addMarker() function implemented as follows (right after the loadHotels() function):
+1. Define the **addMarker()** function implemented as follows (right after the **loadHotels()** function):
 
     ```
     function addMarker(id, name, lat, lng) {
         var marker = new google.maps.Marker({
-      			position: new google.maps.LatLng(lat, lng),
-      			map: map,
-      			title: name
+            position: new google.maps.LatLng(lat, lng),
+            map: map,
+            title: name
         });
         google.maps.event.addListener(marker, 'click', function(event) {
             window.top.location = '/' + id;
         });
-  	}
+    }
     ```
 
-1. Invoke loadHotels() as the last line of the **initialize()** function:
+1. Invoke **loadHotels()** as the last line of the **initialize()** function:
 
-  ```
-  loadHotels();
-  ```
+    ```
+    loadHotels();
+    ```
 
 1. Save the file
 
