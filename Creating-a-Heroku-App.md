@@ -3,7 +3,7 @@ layout: module
 title: Creating a Heroku App
 ---
 
-# Create a new App
+## Create a new App
 
 1. Create a new Play Framework + Java app with Activator:
 
@@ -22,7 +22,7 @@ title: Creating a Heroku App
 4. Verify the app works locally by opening your browser to: [http://localhost:9000/](http://localhost:9000)
 
 
-# Deploy the App on Heroku
+## Deploy the App on Heroku
 
 1. Initialize a git repo in your project's root directory:
 

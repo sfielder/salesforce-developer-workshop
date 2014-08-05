@@ -3,7 +3,7 @@ layout: module
 title: Using Heroku Connect
 ---
 
-# Create a new Heroku Connect App
+## Create a new Heroku Connect App
 
 1. Create a new app using the [salesforce-developer-workshop-java](http://typesafe.com/activator/template/salesforce-developer-workshop-java) template:
 
