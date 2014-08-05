@@ -72,3 +72,4 @@ DEPENDENCIES
   bundler
   jekyll
   rack-jekyll
+  redcarpet
