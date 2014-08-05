@@ -2,3 +2,4 @@ name: Salesforce Developer Workshop
 markdown: redcarpet
 highlighter: true
 gems: ['redcarpet']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']

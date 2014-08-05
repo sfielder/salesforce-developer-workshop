@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
-gem 'github-pages'
-gem 'redcarpet'
+gem 'bundler'
+gem 'jekyll'
+gem 'rack-jekyll'
