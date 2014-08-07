@@ -35,13 +35,15 @@ title: Using Heroku Connect
 
     Note: This pushes your source code and then builds it from scratch on Heroku so it will take a few minutes.  Subsequent deploys are faster.
 
-8. Add the Heroku Connect Add-on:
+8. Add the Heroku Postgres and Heroku Connect Add-ons:
 
-        heroku addons:add herokuconnect
+        heroku addons:add heroku-postgresql
+        
+        heroku addons:add herokuconnect:test
 
 9. Setup Heroku Connect:
 
-        ???
+        Next we'll login to the Heroku dashboard to configure our integration
 
 10. Verify the app works on Heroku:
 
